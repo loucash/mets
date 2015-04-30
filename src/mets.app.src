@@ -1,0 +1,21 @@
+{application, mets, [
+ {description, "Metrics storage using sqlite"},
+ {vsn, "0.1.0"},
+ {registered, []},
+ {applications, [stdlib,
+                 kernel,
+                 lager]},
+ {mod, {mets_app, []}},
+ {env, [
+    {backend, mets_backend_sqlite},
+
+    {mets_backend_sqlite, [
+        {data_file, "./sqlite_data.sql"},
+        {delete_tick, 10000}
+    ]},
+
+    {rollups, [{'_', '_', '_', {avg, {15, minutes}}, [{ttl, 30}]}]},
+    {rollups_emit_tick, 10000},
+    {rollups_procs_ttl, 300000}
+ ]}
+]}.
