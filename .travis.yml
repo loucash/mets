@@ -7,10 +7,3 @@ script: make all && make $TEST_SUITE
 language: erlang
 otp_release:
     - R16B02
-services:
-    - cassandra
-
-cache:
-  apt: true
-  directories:
-    - deps

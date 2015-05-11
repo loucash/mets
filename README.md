@@ -1,4 +1,7 @@
 # mets
+
+[![Build Status](https://travis-ci.org/loucash/mets.svg?branch=master)](https://travis-ci.org/loucash/mets)
+
 This application implements online aggregation and storage system for metrics.
 It does not store raw data and is meant to be used in a single machine/node
 system or on an embedded system.
